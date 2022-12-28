@@ -1,0 +1,58 @@
+.global-div-SingInPage{
+  height: 100%;
+}
+.bg-dark {
+  background-color: #12002b;
+  padding: 100px;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.sign-in-content {
+  display: grid;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: white;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.sign-in-content i, .sign-in-content h1 {
+  text-align: center;
+}
+
+.sign-in-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+.input-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 0.7rem;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.label-wrapper {
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  .bg-dark {
+    background-color: #12002b;
+    padding: 100px 50px;
+  }
+}

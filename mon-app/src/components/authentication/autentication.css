@@ -1,0 +1,33 @@
+.autentication-input{
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: #e0e6ed;
+}
+
+.global-div-authentication{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+
+.autentication-input-button{
+  display: flex;
+  justify-content: center;
+}
+
+::placeholder {
+  color: #e0e6ed;
+}
+
+.button{
+  width: 90px;
+  margin: 5px;
+  color: #6458f5;
+  border: 1px solid;
+  border-radius: 2px;
+  background-color: white;
+}
+
