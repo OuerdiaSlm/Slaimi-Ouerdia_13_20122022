@@ -1,6 +1,10 @@
-.global-div-usersName{
+.global-usersName-button{
   color: white;
   text-align: center;
+}
+.userName-div{
+  padding-top: 15px;
+  padding-bottom: 25px;
 }
 
 .edit-button{
@@ -9,4 +13,8 @@
   color: #fff;
   font-weight: bold;
   padding: 10px;
+}
+
+.userName{
+  margin: 0;
 }

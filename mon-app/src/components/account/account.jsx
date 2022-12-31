@@ -28,10 +28,16 @@ const accountDatas = [
         {accountDatas.map(item => (
           <div key={item.id}>
             <div className="account-item">
-              <h3 className="account-item-title">{item.title}</h3>
-              <hp className="account-item-title">{item.amount}</hp>
-              <p>{item.description}</p>
+              <div>
+                <h3 className="account-title">{item.title}</h3>
+                <p className="account-amount">{item.amount}</p>
+                <p className="account-amount-description">{item.description}</p>
+              </div>
+              <div className="buttonDiv">
+                <button className="viewTransactionsButton">View transactions</button>
             </div>
+            </div>
+            
           </div>
         ))}
       </section>

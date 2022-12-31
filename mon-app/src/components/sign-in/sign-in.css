@@ -4,8 +4,7 @@
 .bg-dark {
   background-color: #12002b;
   padding: 100px;
-  height: 100%;
-  min-height: 100vh;
+  height: 600px
 }
 
 .sign-in-content {
