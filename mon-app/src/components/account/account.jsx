@@ -1,5 +1,9 @@
 import React from "react"
 import './account.css';
+import { useSelector } from "react-redux";
+
+
+
 
 const accountDatas = [
   {
@@ -23,6 +27,9 @@ const accountDatas = [
 ]
 
   function Account() {
+    const token = useSelector((state) => state.user.token);
+    console.log(token)
+
     return (
         <section className="account">
         {accountDatas.map(item => (

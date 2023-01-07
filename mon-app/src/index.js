@@ -6,21 +6,29 @@ import reportWebVitals from './reportWebVitals';
 import Homepage from './pages/homepage';
 import SingInPage from './pages/SingInPage';
 import UserPage from './pages/UserPage';
-import Provider from '@reduxjs/toolkit'
-import store from './app/store';
+import { Provider } from 'react-redux'
+import { configureStore } from "@reduxjs/toolkit";
+import userSlice from "../src/feature/users.slice"
 
+
+const store = configureStore({
+  reducer: {  
+    user: userSlice
+  }
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
+    <Provider store={store}> 
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage/>}/>
           <Route exact path="/SingInPage" element={<SingInPage/>}/>
           <Route exact path="/UserPage" element={<UserPage/>}/>
+          
         </Routes>
       </Router>
-    {/* </Provider> */}
+    </Provider> 
   </React.StrictMode>
 );
 
