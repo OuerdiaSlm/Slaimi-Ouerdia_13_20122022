@@ -2,6 +2,8 @@ import React from "react"
 import './headerNav.css';
 import logo from '../../assets/argentBankLogo.png';
 import { Link } from 'react-router-dom';
+import {useSelector} from'react-redux'
+
 
   function Header() {
     return (

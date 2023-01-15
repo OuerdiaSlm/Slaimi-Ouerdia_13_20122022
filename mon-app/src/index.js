@@ -25,7 +25,6 @@ root.render(
           <Route exact path="/" element={<Homepage/>}/>
           <Route exact path="/SingInPage" element={<SingInPage/>}/>
           <Route exact path="/UserPage" element={<UserPage/>}/>
-          
         </Routes>
       </Router>
     </Provider> 
