@@ -2,9 +2,15 @@ import React from "react"
 import './headerNav.css';
 import logo from '../../assets/argentBankLogo.png';
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import {setUserInfo} from "../../feature/users.slice"
 
 
-  function Header() {
+  function NavSignOut() {
+    const firstName = useSelector((state) => state.user.userFirstName);
+    const lastName = useSelector((state) => state.user.userLastName);
+    console.log(firstName,lastName)
+
     return (
       <div className="global-div-header">
         <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -12,10 +18,17 @@ import { Link } from 'react-router-dom';
           <div className="Barre-navigation">
             
             <Link to={"/"}><img src={logo} className="logo" alt="" /></Link>
-            <Link to={"/SingInPage"}>
+            
+            <Link to={"/"}>
               <div className="signIn-Link">
+                <div className="icon-name-singOut">
                 <i className="fa fa-user-circle"></i>
-                <h3>Sign in</h3>
+                <h3>{firstName} </h3>
+                </div>
+                <div className="icon-name-singOut">
+                <i class="fa fa-sign-out"></i>
+                <h3>Sign Out</h3>
+                </div>
               </div>
             </Link>
           </div>
@@ -23,4 +36,4 @@ import { Link } from 'react-router-dom';
       </div>
     )
   }
-  export default Header;
+  export default NavSignOut;

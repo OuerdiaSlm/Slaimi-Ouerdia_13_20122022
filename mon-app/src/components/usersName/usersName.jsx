@@ -70,9 +70,12 @@ import { useDispatch } from "react-redux";
         
         {verifChange ? 
           <div> 
-            <input  onChange={(e)=>{setNewPrenom (e.target.value); console.log(newPrenom)}}/>
-            <input  onChange={(e)=>{setNewNom (e.target.value)}}/>
-            <button onClick={()=>{modifier()}}>Changer</button>
+            <div> 
+            <input  className="edit-input" onChange={(e)=>{setNewPrenom (e.target.value); console.log(newPrenom)}}/>
+            <input  className="edit-input" onChange={(e)=>{setNewNom (e.target.value)}}/>
+            
+          </div>
+          <button className="edit-button" onClick={()=>{modifier()} }>Change</button>
           </div>
           :
           console.log("faux")

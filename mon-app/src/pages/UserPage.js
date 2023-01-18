@@ -1,7 +1,7 @@
 import React from 'react';
 import Account from '../components/account/account';
 import Footer from '../components/footer/footer';
-import Header from '../components/header/headerNav';
+import NavSignOut from '../components/header/headerNavSignOut';
 import UsersName from '../components/usersName/usersName';
 import './page.css';
 
@@ -10,7 +10,7 @@ function UserPage() {
   return (
     <div className="global-div-userPage">
       <header className="">
-      <Header/>
+      <NavSignOut/>
       </header>
       <div className="usersContent">
         <UsersName/>
