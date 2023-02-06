@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 
 function SingIn() {
   const [email,setEmail]=useState()
-  const [psd,setPsd]=useState()
+  const [password,setpassword]=useState()
   let [errorMsg, setErrorMsg]=useState(false)
 
   const dispatch=useDispatch()
@@ -18,7 +18,7 @@ function SingIn() {
 
   const signInClick=(e) => {
     e.preventDefault()
-    console.log(email, psd)
+    console.log(email, password)
     
       const config = {
         Headers: {
@@ -27,7 +27,7 @@ function SingIn() {
       }
     const data = axios.post('http://localhost:3001/api/v1/user/login', {
       email :email,
-      password : psd
+      password : password
       
     },
     config
@@ -49,7 +49,7 @@ function SingIn() {
         <form className="sign-in-content">
         <i className="fa fa-user-circle sign-in-icon"></i>
         <h1>Sign In</h1>
-        {errorMsg ? <p>Aucuns utilisateurs</p> : console.log("errorMsg = false")}
+        {errorMsg ? <p className="errorMessage">No users found</p> : console.log("errorMsg = false")}
           <label className="label-wrapper">
             Username
           </label>
@@ -57,7 +57,7 @@ function SingIn() {
           <label className="label-wrapper">
             Password
           </label>
-          <input type="password" className="input-wrapper" onChange={(e)=>setPsd(e.target.value)}/>
+          <input type="password" className="input-wrapper" onChange={(e)=>setpassword(e.target.value)}/>
           <div>
             <input type="checkbox" id="remember-me" />
             <label for="remember-me">Remember me</label>
