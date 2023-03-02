@@ -28,11 +28,11 @@ import { useDispatch } from "react-redux";
       ).then(res=>{
         setPrenom(res.data.body.firstName)
         setNom(res.data.body.lastName)
-        console.log(res.data.body.firstName)
-
         dispatch (setUserInfo([res.data.body.firstName,res.data.body.lastName]))
-      })
 
+      }).catch(err=>document.body.innerHTML="")
+         
+      
     })
 
     //Changement de nom au click
@@ -42,8 +42,6 @@ import { useDispatch } from "react-redux";
     }
 
     const modifier=()=>{
-      //axios.put(bjbcl.profile),{firstName:newPrenom}
-      console.log(newPrenom,newNom)
       axios.put('http://localhost:3001/api/v1/user/profile', 
       {firstName:newPrenom,
       lastName:newNom},
@@ -52,7 +50,6 @@ import { useDispatch } from "react-redux";
       
       )
       .then(res=>{
-        console.log(res.data.body.firstName)
         setPrenom(res.data.body.firstName)
         setNom(res.data.body.lastName)
       })
@@ -71,7 +68,7 @@ import { useDispatch } from "react-redux";
         {verifChange ? 
           <div> 
             <div> 
-            <input  className="edit-input" onChange={(e)=>{setNewPrenom (e.target.value); console.log(newPrenom)}}/>
+            <input  className="edit-input" onChange={(e)=>{setNewPrenom (e.target.value);}}/>
             <input  className="edit-input" onChange={(e)=>{setNewNom (e.target.value)}}/>
             
           </div>

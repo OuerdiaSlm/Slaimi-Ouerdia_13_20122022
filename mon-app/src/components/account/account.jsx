@@ -3,8 +3,6 @@ import './account.css';
 import { useSelector } from "react-redux";
 
 
-
-
 const accountDatas = [
   {
     "id": "1",
@@ -28,7 +26,6 @@ const accountDatas = [
 
   function Account() {
     const token = useSelector((state) => state.user.token);
-    console.log(token)
 
     return (
         <section className="account">

@@ -3,13 +3,12 @@ import './headerNav.css';
 import logo from '../../assets/argentBankLogo.png';
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
-import {setUserInfo} from "../../feature/users.slice"
+
 
 
   function NavSignOut() {
     const firstName = useSelector((state) => state.user.userFirstName);
     const lastName = useSelector((state) => state.user.userLastName);
-    console.log(firstName,lastName)
 
     return (
       <div className="global-div-header">
@@ -26,7 +25,7 @@ import {setUserInfo} from "../../feature/users.slice"
                 <h3>{firstName} </h3>
                 </div>
                 <div className="icon-name-singOut">
-                <i class="fa fa-sign-out"></i>
+                <i className="fa fa-sign-out"></i>
                 <h3>Sign Out</h3>
                 </div>
               </div>

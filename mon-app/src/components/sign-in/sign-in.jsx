@@ -1,9 +1,8 @@
 import React from 'react';
 import './sign-in.css';
-import { Link } from 'react-router-dom';
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {setUsersData} from "../../feature/users.slice"
 import {useNavigate} from "react-router-dom";
 
@@ -18,7 +17,6 @@ function SingIn() {
 
   const signInClick=(e) => {
     e.preventDefault()
-    console.log(email, password)
     
       const config = {
         Headers: {
@@ -58,13 +56,11 @@ function SingIn() {
             Password
           </label>
           <input type="password" className="input-wrapper" onChange={(e)=>setpassword(e.target.value)}/>
-          <div>
-            <input type="checkbox" id="remember-me" />
-            <label for="remember-me">Remember me</label>
-          </div>
-         
+            <div>
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Remember me</label>
+            </div>
           <input type="submit" value="Sign in" className="sign-in-button" onClick={(e)=>signInClick(e)}/>
-          
         </form>
     </div>
   )

@@ -38,12 +38,13 @@
 
 .icon-name-singOut{
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .signIn-Link i {
   display: flex;
   align-items: center;
+  margin-right: 5px;
 }
 
 .signIn-Link h3 {
