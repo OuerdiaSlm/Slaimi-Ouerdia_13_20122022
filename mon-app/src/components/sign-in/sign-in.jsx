@@ -33,9 +33,10 @@ function SingIn() {
       dispatch(setUsersData(res.data.body.token))
   
       // redirection
-      navigate("/UserPage")
      
-    }).catch((error)=>{
+     
+    }).then(res=> navigate("/UserPage"))
+    .catch((error)=>{
       // bolen = !bolen
       setErrorMsg(!errorMsg)
     })
@@ -47,7 +48,7 @@ function SingIn() {
         <form className="sign-in-content">
         <i className="fa fa-user-circle sign-in-icon"></i>
         <h1>Sign In</h1>
-        {errorMsg ? <p className="errorMessage">No users found</p> : console.log("errorMsg = false")}
+        {errorMsg ? <p className="errorMessage">No users found</p> : console.log("Aucun message d'erreur")}
           <label className="label-wrapper">
             Username
           </label>

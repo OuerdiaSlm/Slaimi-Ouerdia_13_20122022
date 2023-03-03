@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
   function UsersName() {
     // recupere le token dans le store redux
     const dispatch=useDispatch()
-    const token = useSelector((state) => state.user.token);
+    let token = useSelector((state) => state.user.token);
   
     const [prenom,setPrenom]=useState()
     const [nom,setNom]=useState()
@@ -18,8 +18,21 @@ import { useDispatch } from "react-redux";
     const [newNom,setNewNom]=useState()
     let [verifChange,setVerif]=useState(false)
 
+//stockage du token redux dans localStorage
+    if(token){
+      localStorage.setItem("token",token)
+    }
+    else{
+// si il n'ya pas de token de redux on récupere celui du localstorage
+     const newToken=localStorage.getItem("token")
+     token=newToken
+    }
     useEffect(()=>{
-    
+// si il n'ya a pas de token du tout on affiche une page vide
+      if(!token){
+        document.body.innerHTML="NOT FOUND"
+      }
+      
        axios.post('http://localhost:3001/api/v1/user/profile', 
        {key:'value'},
 
@@ -29,10 +42,8 @@ import { useDispatch } from "react-redux";
         setPrenom(res.data.body.firstName)
         setNom(res.data.body.lastName)
         dispatch (setUserInfo([res.data.body.firstName,res.data.body.lastName]))
-
-      }).catch(err=>document.body.innerHTML="")
-         
-      
+        
+      })
     })
 
     //Changement de nom au click
@@ -68,14 +79,14 @@ import { useDispatch } from "react-redux";
         {verifChange ? 
           <div> 
             <div> 
-            <input  className="edit-input" onChange={(e)=>{setNewPrenom (e.target.value);}}/>
+            <input  className="edit-input" onChange={(e)=>{setNewPrenom (e.target.value)}}/>
             <input  className="edit-input" onChange={(e)=>{setNewNom (e.target.value)}}/>
             
           </div>
           <button className="edit-button" onClick={()=>{modifier()} }>Change</button>
           </div>
           :
-          console.log("faux")
+          console.log("Aucune modification possible")
         }
        
       </div>

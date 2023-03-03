@@ -10,6 +10,10 @@ import { useSelector } from "react-redux";
     const firstName = useSelector((state) => state.user.userFirstName);
     const lastName = useSelector((state) => state.user.userLastName);
 
+  function deleteStorage(e){
+    //supprimer token localstorage
+    localStorage.removeItem('token');
+  }
     return (
       <div className="global-div-header">
         <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -26,7 +30,7 @@ import { useSelector } from "react-redux";
                 </div>
                 <div className="icon-name-singOut">
                 <i className="fa fa-sign-out"></i>
-                <h3>Sign Out</h3>
+                <h3 onClick={(e)=>deleteStorage(e)}>Sign Out</h3>
                 </div>
               </div>
             </Link>
